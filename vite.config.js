@@ -7,4 +7,16 @@ export default defineConfig({
   build: {
     sourcemap: true,
   },
+  resolve: {
+    alias: {
+      components: '/src/components',
+      data: '/src/data',
+      styles: '/src/styles',
+      helpers: '/src/helpers',
+      pages: '/src/pages',
+      hooks: '/src/hooks',
+      service: '/src/service',
+      reduxStore: '/src/reduxStore',
+    },
+  },
 });
