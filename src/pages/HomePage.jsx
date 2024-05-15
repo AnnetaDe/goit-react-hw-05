@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { MovieList } from '../components/MovieList';
-import { useLocation } from 'react-router-dom';
+import { MovieList } from '../components/Movielist/MovieList';
 import { trendingMovies } from '../assets/servises/api';
+import s from './HomePage.module.css';
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -21,8 +21,6 @@ const HomePage = () => {
 
   return (
     <>
-      <h3>Trending</h3>
-
       <MovieList moviesArray={movies} />
 
       {/* <Outlet /> */}

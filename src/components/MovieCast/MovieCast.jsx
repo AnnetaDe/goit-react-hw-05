@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
-import { getMovieCast1 } from '../assets/servises/api';
+import { getMovieCast1 } from '../../assets/servises/api';
 import { useEffect, useState } from 'react';
-
+import s from './MovieCast.module.css';
 export const MovieCast = () => {
   const id = useParams().id;
   const [cast, setCast] = useState([]);
@@ -21,23 +21,21 @@ export const MovieCast = () => {
   console.log('cast', cast);
 
   return (
-    <div>
+    <div className={s.cast}>
       <h2>Cast</h2> <Link to={'./'}></Link>
-      <ul>
-        <li>
-          {cast.map(item => (
-            <div key={item.id}>
-              <img
-                src={`https://image.tmdb.org/t/p/w500/${item.profile_path}`}
-                alt={item.name}
-                width={200}
-              />
-              <p>{item.name}</p>
-              <p>{item.character}</p>
-            </div>
-          ))}
-        </li>
-      </ul>
+      {cast.map(item => (
+        <div key={item.id} className={s.inner}>
+          <div className={s.imgConteiner}>
+            <img
+              src={`https://image.tmdb.org/t/p/w500/${item.profile_path}`}
+              alt={item.name}
+              width={100}
+            />
+          </div>
+          <p>{item.name}</p>
+          <p>{item.character}</p>
+        </div>
+      ))}
     </div>
   );
 };

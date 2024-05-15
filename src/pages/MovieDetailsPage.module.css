@@ -1,0 +1,14 @@
+.movDetails {
+  margin-top: 20px;
+  padding: 50px;
+  font-family: var(--font-family);
+  ul {
+    margin-top: 20px;
+  }
+  li {
+    margin: 10px;
+  }
+  p {
+    margin: 20px;
+  }
+}

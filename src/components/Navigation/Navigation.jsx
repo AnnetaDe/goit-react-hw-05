@@ -1,9 +1,9 @@
 import { NavLink, Link } from 'react-router-dom';
+import s from './Navigation.module.css';
 import clsx from 'clsx';
 export const Navigation = () => {
   return (
-    <header>
-      <h2>Navigation in header</h2>
+    <header className={s.header}>
       <ul>
         <li>
           <NavLink className={'activeLink'} to="/">

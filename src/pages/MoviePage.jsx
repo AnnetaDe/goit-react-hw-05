@@ -1,10 +1,10 @@
 import { Link, useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { MovieList } from '../components/MovieList';
-import { Formik, Field, Form } from 'formik';
+
 import s from './MoviePage.module.css';
-import { SearchBox } from '../components/SearchBox';
+import { SearchBox } from '../components/Search/SearchBox';
 import { getMovies } from '../assets/servises/api';
+import { MovieList } from '../components/Movielist/MovieList';
 
 export const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -37,22 +37,18 @@ export const MoviesPage = () => {
   };
 
   return (
-    <div>
-      <h1 className={s.title}>Movies Page</h1>
-      <SearchBox value={movieName} onChange={updateQueryString} />
+    <div className={s.movPage}>
+      <div>
+        <SearchBox value={movieName} onChange={updateQueryString} />
+      </div>
+      {/* <MovieList movies={movies} /> */}
 
-      {/* <MovieList movies={visible} /> */}
-
-      <h2>MovieList</h2>
-      <ul>
+      <ul className={s.movList}>
         {visible.map(item => {
           return (
             <li key={item.id}>
               <h3>{item.title}</h3>
-
               <Link to={`/movies/${item.id}`}>
-                <p>movie/{item.id}</p>
-                <p>id {item.id}</p>
                 <img
                   src={`https://image.tmdb.org/t/p/w500/${item.backdrop_path}`}
                   alt={item.title}
