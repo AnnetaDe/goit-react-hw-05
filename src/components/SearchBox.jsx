@@ -1,11 +1,16 @@
 export const SearchBox = ({ value, onChange }) => {
   return (
     <div>
-      <input
-        type="text"
-        value={value}
-        onChange={e => onChange(e.target.value)}
-      />
+      <form>
+        <input
+          type="text"
+          value={value}
+          onChange={e => onChange(e.target.value)}
+          onInput={e => {
+            console.log('onInput', e.target.value);
+          }}
+        />
+      </form>
     </div>
   );
 };

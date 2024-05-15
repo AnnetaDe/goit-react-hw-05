@@ -11,6 +11,9 @@ export const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const movieName = searchParams.get('name') ?? '';
   console.log('movieName', movieName);
+  const visible = movies.filter(item =>
+    item.original_title.toLowerCase().includes(movieName.toLowerCase())
+  );
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -26,9 +29,6 @@ export const MoviesPage = () => {
   }, []);
   console.log('movies', movies);
 
-  const visible = movies.filter(item =>
-    item.original_title.toLowerCase().includes(movieName.toLowerCase())
-  );
   console.log('visible', visible);
 
   const updateQueryString = name => {
@@ -42,6 +42,7 @@ export const MoviesPage = () => {
       <SearchBox value={movieName} onChange={updateQueryString} />
 
       {/* <MovieList movies={visible} /> */}
+
       <h2>MovieList</h2>
       <ul>
         {visible.map(item => {
