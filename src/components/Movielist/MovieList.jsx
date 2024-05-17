@@ -8,13 +8,14 @@ export const MovieList = ({ moviesArray }) => {
         {moviesArray.map(item => {
           return (
             <li key={item.id}>
-              <div className={s.title}>
-                <h3>{item.title}</h3>
-              </div>
               <Link to={`/movies/${item.id}`}>
+                <div className={s.title}>
+                  <h3>{item.title}</h3>
+                </div>
+
                 <div className={s.imgholder}>
                   <img
-                    src={`https://image.tmdb.org/t/p/w500/${item.backdrop_path}`}
+                    src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
                     alt={item.title}
                     width={400}
                   />

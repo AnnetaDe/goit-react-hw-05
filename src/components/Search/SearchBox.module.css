@@ -3,6 +3,17 @@
   align-items: center;
   margin: 20px;
   padding: 50px;
+  button {
+    font-family: var(--font-family);
+    border: none;
+    color: white;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    font-size: 24px;
+    margin-left: 10px;
+  }
 }
 input {
   border: 1px solid #161515;

@@ -1,20 +1,26 @@
+import { Field, Form, Formik } from 'formik';
 import s from './SearchBox.module.css';
-export const SearchBox = ({ value, onChange }) => {
+import { useSearchParams } from 'react-router-dom';
+
+export const SearchBox = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
   return (
     <div className={s.search}>
-      <label>
-        Find movies
-        <form>
-          <input
-            type="text"
-            value={value}
-            onChange={e => onChange(e.target.value)}
-            onInput={e => {
-              console.log('onInput', e.target.value);
-            }}
-          />
-        </form>
-      </label>
+      <Formik
+        initialValues={{ q: '' }}
+        onSubmit={values => {
+          if (values.q === '') {
+            return;
+          }
+          setSearchParams({ query: values.q });
+          console.log(values);
+        }}
+      >
+        <Form>
+          <Field aria-label="search products" type="text" name="q" />
+          <button type="submit">Search</button>
+        </Form>
+      </Formik>
     </div>
   );
 };

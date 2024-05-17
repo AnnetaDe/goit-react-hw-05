@@ -15,4 +15,25 @@
     font-size: 16px;
     font-family: var(--font-family);
   }
+  .imgholder {
+    width: 400px;
+    height: 600px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  li:hover {
+    box-shadow: 2px 2px 6px #000;
+  }
+  .title {
+    width: 400px;
+  }
 }

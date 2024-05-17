@@ -15,7 +15,7 @@ export const Navigation = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink className={buildLinkClass} to="/movie_search">
+          <NavLink className={buildLinkClass} to="/movies">
             Movies
           </NavLink>
         </li>

@@ -1,5 +1,4 @@
 .cast {
-  padding: 50px;
   display: flex;
   flex-wrap: wrap;
   font-family: var(--font-family);
@@ -17,10 +16,15 @@
 
 .imgConteiner {
   align-items: center;
+  justify-content: center;
   width: 100px;
   height: 100%;
   overflow: hidden;
-  background-color: burlywood;
 
   border-radius: 10px;
+}
+.castT {
+  font-size: 8px;
+  width: 100px;
+  font-weight: bold;
 }

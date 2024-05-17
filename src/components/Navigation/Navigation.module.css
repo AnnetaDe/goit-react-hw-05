@@ -12,4 +12,11 @@ header {
     gap: 20px;
     list-style: none;
   }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  .link.active {
+    color: blueviolet;
+  }
 }

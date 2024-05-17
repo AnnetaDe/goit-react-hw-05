@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { get } from 'lodash';
 
 const accsesKey = '0e893d00715b51fc0b7b490dda78c97b';
 
@@ -54,6 +53,7 @@ const instance = axios.create({
       'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZTg5M2QwMDcxNWI1MWZjMGI3YjQ5MGRkYTc4Yzk3YiIsInN1YiI6IjY2NDFkOWViNTQ3OTcwMDYxOWZiNDkzNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.JCbUpgqC3zsJYrjqA4Pefevu2yysXzSAMJPb_RoiH3c',
   },
 });
+
 export const getMoviesById = async id => {
   const response = await instance.get(`movie/${id}`);
   return response.data;
@@ -72,4 +72,24 @@ export const getMovieCast = async pathname => {
 export const getMovieReviews = async id => {
   const response = await instance.get(`movie/${id}/reviews`);
   return response.data.results;
+};
+
+export const getMoviesByQuerry2 = async querry => {
+  const options = {
+    method: 'GET',
+    url: 'https://api.themoviedb.org/3/search/movie',
+    params: {
+      query: querry,
+      include_adult: 'false',
+      language: 'en-US',
+      page: '1',
+    },
+    headers: {
+      accept: 'application/json',
+      Authorization:
+        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZTg5M2QwMDcxNWI1MWZjMGI3YjQ5MGRkYTc4Yzk3YiIsInN1YiI6IjY2NDFkOWViNTQ3OTcwMDYxOWZiNDkzNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.JCbUpgqC3zsJYrjqA4Pefevu2yysXzSAMJPb_RoiH3c',
+    },
+  };
+  const response = await axios.request(options);
+  return response.data;
 };

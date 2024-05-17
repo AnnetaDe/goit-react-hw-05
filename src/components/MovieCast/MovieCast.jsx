@@ -22,18 +22,20 @@ export const MovieCast = () => {
 
   return (
     <div className={s.cast}>
-      <h2>Cast</h2> <Link to={'./'}></Link>
+      <Link to={'./'}></Link>
       {cast.map(item => (
         <div key={item.id} className={s.inner}>
           <div className={s.imgConteiner}>
             <img
               src={`https://image.tmdb.org/t/p/w500/${item.profile_path}`}
               alt={item.name}
-              width={100}
+              width={120}
             />
           </div>
-          <p>{item.name}</p>
-          <p>{item.character}</p>
+          <div className={s.castT}>
+            <p>{item.name}</p>
+            <p>{item.character}</p>
+          </div>
         </div>
       ))}
     </div>
