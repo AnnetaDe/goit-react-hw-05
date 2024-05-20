@@ -1,14 +1,15 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import s from './MovieList.module.css';
 export const MovieList = ({ moviesArray }) => {
+  const location = useLocation();
   return (
     <div className={s.listContainer}>
       <ul>
         {moviesArray.map(item => {
           return (
             <li key={item.id}>
-              <Link to={`/movies/${item.id}`}>
+              <Link to={`/movies/${item.id}`} state={location}>
                 <div className={s.title}>
                   <h3>{item.title}</h3>
                 </div>

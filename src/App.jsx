@@ -7,7 +7,7 @@ import NotFoundPage from './pages/NotFoundPage.jsx';
 import Navigation from './components/Navigation/Navigation.jsx';
 
 const HomePage = lazy(() => import('./pages/HomePage.jsx'));
-const MoviePage = lazy(() => import('./pages/MoviePage.jsx'));
+const MoviesPage = lazy(() => import('./pages/MoviesPage.jsx'));
 const MovieDetailsPage = lazy(() => import('./pages/MovieDetailsPage.jsx'));
 const MovieCast = lazy(() => import('./components/MovieCast/MovieCast.jsx'));
 const MovieReviews = lazy(() =>
@@ -24,7 +24,7 @@ export const App = () => {
 
           {/* <Route path="/movies" element={<MovieList />} /> */}
           {/* <Route path="/movies" element={<SearchBox />} /> */}
-          <Route path="/movies" element={<MoviePage />} />
+          <Route path="/movies" element={<MoviesPage />} />
           <Route path="/movies/:id" element={<MovieDetailsPage />}>
             <Route path="cast" element={<MovieCast />} />
             <Route path="reviews" element={<MovieReviews />} />
