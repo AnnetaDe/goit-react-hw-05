@@ -17,7 +17,7 @@ export const MovieCast = () => {
       }
     };
     fetchCast();
-  }, []);
+  }, [id]);
   console.log('cast', cast);
 
   return (

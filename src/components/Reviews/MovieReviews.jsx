@@ -16,7 +16,7 @@ export const MovieReviews = () => {
       }
     };
     fetchReviews();
-  }, []);
+  }, [id]);
   console.log('review', review);
   return (
     <div className={s.reviewsContainer}>
